@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}My info{% endblock %}
+{% block content %}
+<table>
+    <tr valign = 'top'>
+        <td>
+            {{info.name}}<br>
+            {{info.last_name}}<br>
+            {{info.date_of_birth}}<br><br>
+            Bio:
+            <pre>{{info.bio}}</pre>
+        </td>
+        <td>
+            Contacts<br>
+            Email: {{info.email}}<br>
+            Jabber: {{info.jabber}}<br>
+            {% if info.skype %}
+                Skype: {{info.skype}}<br>
+            {% endif %}
+            {% if info.other_contacts %}
+                Other contacts:
+                <pre>{{info.other_contacts}}</pre>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+{% endblock %}
